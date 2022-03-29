@@ -7,5 +7,4 @@ class Transaction
     @date = date
     @amount = amount
   end
-
 end
