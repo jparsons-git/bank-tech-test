@@ -6,13 +6,16 @@ require 'capybara/rspec'
 require 'pg'
 require 'simplecov'
 require 'simplecov-console'
+
+# Database stuff NOT required
 # require 'database_helpers'
 # require_relative 'setup_test_database'
 
-ENV['RACK_ENV'] = 'test'
-ENV['ENVIRONMENT'] = 'test'
+# ENV['RACK_ENV'] = 'test'
+# ENV['ENVIRONMENT'] = 'test'
 
 RSpec.configure do |config|
+  # Database stuff NOT required
   # config.before(:each) do
   #   setup_test_database
   # end
