@@ -11,11 +11,4 @@ describe Transaction do
       expect(Transaction.new(date, amount)).to be_instance_of Transaction
     end
   end
-
-  # describe '#get a roll for a frame' do
-  #   it 'tests setting one single roll' do
-  #     roll = Roll.new(1,1,6)
-  #     expect(Roll.get_score(1,1)).to eq 6
-  #   end
-  # end
 end
