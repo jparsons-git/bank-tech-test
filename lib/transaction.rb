@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Transaction defintion
 class Transaction
   attr_reader :date, :amount
 

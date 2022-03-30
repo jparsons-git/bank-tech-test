@@ -23,10 +23,28 @@ Jane
 ## Design
 * The Class Diagram can be found under 'docs'
 
+## User Stories
+* So that a user can manage their money
+* They would like to open a new bank account
+
+* So that a user can save their money
+* They would like to be able to deposit an monetry amount into their account
+
+* So that a user can spend their money
+* They would like to be able to withdrawal a monetry amount from their account
+
+* So that a user can review activity on their account
+* They would like to be able to view a statement which shows
+* transactions in date order (current to past) and the resulting balance
+
+## Example Statement
+
+*      date || credit || debit || balance
+*      14/01/2023 || || 500.00 || 2500.00
+*      13/01/2023 || 2000.00 || || 3000.00
+*      10/01/2023 || 1000.00 || || 1000.00
+
 ## How to run/test
 * This project is self testing.
 * To run some examples through node, please see the following:
 * 
-* 
-* 
-

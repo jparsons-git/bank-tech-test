@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require_relative '../lib/transaction'
+require 'date'
 
+# Account defintion
 class Account
   attr_reader :transactions, :balance
 
@@ -11,8 +13,12 @@ class Account
   end
 
   def add_transaction(trans)
-    @transactions.push(trans)
-    @balance += trans.amount.to_i
+    if trans.amount.negative? && trans.amount.abs.to_f > @balance.to_f
+      puts 'There are insufficient funds to withdraw this amount.'
+    else
+      @transactions.push(trans)
+      @balance += trans.amount.to_i
+    end
   end
 end
 
@@ -21,3 +27,8 @@ end
 # 14/01/2023 || || 500.00 || 2500.00
 # 13/01/2023 || 2000.00 || || 3000.00
 # 10/01/2023 || 1000.00 || || 1000.00
+
+puts 'Start'
+currentDate = Date.today
+puts "Date: #{currentDate}"
+puts 'End'

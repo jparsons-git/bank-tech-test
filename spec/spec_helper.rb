@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require 'capybara'
-require 'capybara/rspec'
-require 'pg'
+# require 'capybara'
+# require 'capybara/rspec'
+# require 'pg'
 require 'simplecov'
 require 'simplecov-console'
 
