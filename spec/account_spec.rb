@@ -13,16 +13,11 @@ describe Account do
 
   describe '#add transaction to account' do
     it 'tests adding a DEPOSIT transaction to the account' do
-      # trans = Transaction.new('2023-01-10 00:00:00', 1000.00)
       account.add_transaction(Transaction.new('2023-01-10', 1000.00))
       expect(account.balance).to eq 1000
     end
 
     it 'tests adding a WITHDRAWAL transaction to the account' do
-      # account = Account.new([], 0)
-      # trans1 = Transaction.new('2023-01-10 00:00:00', 1000.00)
-      # trans2 = Transaction.new('2023-01-13 00:00:00', 2000.00)
-      # trans3 = Transaction.new('2023-01-14 00:00:00', -500.00)
       account.add_transaction(Transaction.new('2023-01-10', 1000.00))
       account.add_transaction(Transaction.new('2023-01-13', 2000.00))
       account.add_transaction(Transaction.new('2023-01-14', -500.00))
@@ -30,9 +25,6 @@ describe Account do
     end
 
     it 'tests adding a WITHDRAWAL transaction to the account with insufficient funds' do
-      # account = Account.new([], 0)
-      # trans1 = Transaction.new('2023-01-10 00:00:00', 599.99)
-      # trans2 = Transaction.new('2023-01-14 00:00:00', -600.00)
       account.add_transaction(Transaction.new('2023-01-10', 599.99))
       expect do
         account.add_transaction(Transaction.new('2023-01-14', -600.00))
