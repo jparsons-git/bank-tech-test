@@ -32,6 +32,7 @@ Jane
 
 * So that a user can spend their money
 * They would like to be able to withdrawal a monetry amount from their account
+* after checking there is enough money to withdraw? Is this is requirement?
 
 * So that a user can review activity on their account
 * They would like to be able to view a statement which shows
