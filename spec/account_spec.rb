@@ -41,13 +41,13 @@ describe Account do
   end
 
   describe '#show statement' do
-    it 'tests outputting a statement' do
+    it 'tests outputting a statement in the right order' do
       account.add_transaction(Transaction.new('2023-01-10', 1000.00))
       account.add_transaction(Transaction.new('2023-01-13', 2000.00))
       account.add_transaction(Transaction.new('2023-01-14', -500.00))
       expect do
-        account.show_statement(account)
-      end.to output("date            || credit    || debit     || balance\n2023-01-10      ||   1000.00 ||           ||   1000.00\n2023-01-13      ||   2000.00 ||           ||   3000.00\n2023-01-14      ||           ||    500.00 ||   2500.00\n").to_stdout
+        account.show_statement
+      end.to output("date            || credit    || debit     || balance\n2023-01-14      ||           ||    500.00 ||   2500.00\n2023-01-13      ||   2000.00 ||           ||   3000.00\n2023-01-10      ||   1000.00 ||           ||   1000.00\n").to_stdout
     end
   end
 end
