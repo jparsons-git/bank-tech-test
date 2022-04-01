@@ -31,21 +31,51 @@ Jane
 * They would like to be able to deposit an monetry amount into their account
 
 * So that a user can spend their money
-* They would like to be able to withdrawal a monetry amount from their account
-* after checking there is enough money to withdraw? Is this is requirement?
+* They would like to be able to withdraw a monetary amount from their account
+
+* So that a user can only spend money they have available
+* They would like the account to reject withdrawal amounts where there are insufficient funds
 
 * So that a user can review activity on their account
 * They would like to be able to view a statement which shows
-* transactions in date order (current to past) and the resulting balance
+* transactions in current to past date order and the running balance
 
-## Example Statement
-
-*      date || credit || debit || balance
-*      14/01/2023 || || 500.00 || 2500.00
-*      13/01/2023 || 2000.00 || || 3000.00
-*      10/01/2023 || 1000.00 || || 1000.00
+## How set up the project repo
+* To pull down and set up, run
+* 
+*           git clone https://github.com/jparsons-git/bank-tech-test.git
+* then run
+*           bundle install
 
 ## How to run/test
-* This project is self testing.
-* To run some examples through node, please see the following:
 * 
+* To run an example through irb, please see the following:
+* 
+* From the project route directory in the terminal, go into the irb by using this command
+*              irb -r ./lib/account.rb
+*
+* then from the > prompt in irb, type in the following commands
+*           > account = Account.new([], 0)
+*           > account.add_transaction(Transaction.new('2023-01-10', 1000.00))
+*           > account.add_transaction(Transaction.new('2023-01-13', 2000.00))
+*           > account.add_transaction(Transaction.new('2023-01-14', -500.00))
+*           > account.show_statement
+
+* This should give you an example statement which looks like this
+
+*           date            || credit    || debit     || balance
+*           2023-01-14      ||           ||    500.00 ||   2500.00
+*           2023-01-13      ||   2000.00 ||           ||   3000.00
+*           2023-01-10      ||   1000.00 ||           ||   1000.00
+
+## TODO's and Future Development
+* Reformatting of the date from yyyy-mm-dd to 
+* Take the "balance" attribute from the account.rb class - it is not required for this implementation
+* Redefine the method 'statement_rows' in the account class as a 'private' method
+
+
+## Questions for the Reviewer
+* How to make longer lines of code pass rubocop
+* Advice on what funcationality should be in a feature test - there are just unit tests here
+* Some tips on how to use mocking and doubling more effective 
+* Perhaps soem tips on String formatting - although I think I could finesse what I've done
